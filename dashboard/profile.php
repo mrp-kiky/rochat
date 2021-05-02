@@ -71,10 +71,22 @@ if ($user_id=="")
                     <b>Phone</b> <a class="float-right"><?=$result[0]['user_hp']?></a>
                   </li>
                   <li class="list-group-item">
-                    <b>Cawangan</b> <a class="float-right"><?=$result[0]['user_cawangan']?></a>
+                    <b>Whatsapp</b> <a class="float-right">
+                      <div class="icheck-primary">                  
+                          <p>
+                            <input onclick="this.checked=!this.checked;" type="checkbox" class="checkbox" <?php if($result[0]['user_is_wa']){echo "checked";}?> >
+                          </p>
+                      </div>
+                    </a>
                   </li>
                   <li class="list-group-item">
-                    <b>Job Position</b> <a class="float-right"><?=$result[0]['user_job_position']?></a>
+                    <b>Telegram</b> <a class="float-right">
+                    <div class="icheck-primary">                  
+                          <p>
+                            <input onclick="this.checked=!this.checked;" type="checkbox" class="checkbox" <?php if($result[0]['user_is_tele']){echo "checked";}?> >
+                          </p>
+                      </div>
+                      </a>
                   </li>
                   
                 </ul>
@@ -140,17 +152,28 @@ if ($user_id=="")
                       </div>
 
                       <div class="form-group row">
-                        <label for="user_nama" class="col-sm-2 col-form-label">Cawangan</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="user_cawangan" name="user_cawangan" placeholder="Cawangan" value="<?=$result[0]['user_cawangan']?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group row">
-                        <label for="user_nama" class="col-sm-2 col-form-label">Job Position</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="user_job_position" name="user_job_position" placeholder="Job Position" value="<?=$result[0]['user_job_position']?>">
-                        </div>
+                          <div class="col-2">
+                                <div class="icheck-primary">                  
+                                    <p>
+                                      <input type="checkbox" class="checkbox" id="is_wa" name="is_wa" >
+                                      <label for="is_wa">Whatsapp</label>
+                                      <br>
+                                      <label for="is_wa" class="error block"></label>
+                                    </p>
+                                  
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="icheck-primary">                  
+                                    <p>
+                                      <input type="checkbox" class="checkbox" id="is_tele" name="is_tele" >
+                                      <label for="is_tele">Telegram</label>
+                                      <br>
+                                      <label for="is_tele" class="error block"></label>
+                                    </p>
+                                  
+                                </div>
+                            </div>
                       </div>
 
                       <div class="form-group row">
